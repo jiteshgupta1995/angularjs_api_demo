@@ -1,0 +1,25 @@
+<div class="row" style="margin: 0px">
+    <div class="col-md-12">
+        
+    </div>
+    <div class="col-md-12 margin-top10">
+        <table class="table table-bordered">
+            <thead>
+                <tr>
+                    <th>Names   <button ng-click="sortBy('name')"><i class="fa fa-filter" aria-hidden="true"></i></button></th>
+                    <th>Capital <button ng-click="sortBy('capital')"><i class="fa fa-filter" aria-hidden="true"></i></button></th>
+                    <th>Currency    <button ng-click="sortBy('currencies')"><i class="fa fa-filter" aria-hidden="true"></i></button></th>
+                    <th>Population  <button ng-click="sortBy('population')"><i class="fa fa-filter" aria-hidden="true"></i></button></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat="item in items | orderBy:propertyName:reverse">
+                    <td> {{item.name}}</td>
+                    <td> {{item.capital}}</td>
+                    <td><span ng-repeat="a in item.currencies">{{a.name}}</span></td>
+                    <td>{{item.population}}</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
